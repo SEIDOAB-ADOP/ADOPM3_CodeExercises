@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleInput", "ConsoleInpu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeedGenerator", "SeedGenerator\SeedGenerator.csproj", "{0065ACF1-EB45-44CD-A87C-97A087F334F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegate3", "Delegate3\Delegate3.csproj", "{14F29862-8552-4B71-95B3-18B74653104B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{0065ACF1-EB45-44CD-A87C-97A087F334F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0065ACF1-EB45-44CD-A87C-97A087F334F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0065ACF1-EB45-44CD-A87C-97A087F334F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F29862-8552-4B71-95B3-18B74653104B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F29862-8552-4B71-95B3-18B74653104B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F29862-8552-4B71-95B3-18B74653104B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F29862-8552-4B71-95B3-18B74653104B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

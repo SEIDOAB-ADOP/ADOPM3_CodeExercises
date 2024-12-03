@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Streams0
 {
-    public struct AddressType
+    public struct Address
     {
         public string Street { get; set; }
         public int Zip { get; set; }
@@ -21,7 +21,7 @@ namespace Streams0
 
         public static class Factory
         {
-            public static AddressType CreateRandom()
+            public static Address CreateRandom()
             {
                 string[] streets = "Mainstreet, Backstreet, Sidestreet, Up Blvd, Down Blvd".Split(", ");
                 string[] cities = "Stockholm, Gavle, Malmo, Gothenburg".Split(", ");
@@ -33,7 +33,7 @@ namespace Streams0
                 string city = cities[rnd.Next(cities.Length)];
                 string country = countries[rnd.Next(countries.Length)];
 
-                AddressType adr = new AddressType { Street=street, Zip=zip, City=city, Country=country };
+                Address adr = new Address { Street=street, Zip=zip, City=city, Country=country };
                 return adr;
             }
         }
