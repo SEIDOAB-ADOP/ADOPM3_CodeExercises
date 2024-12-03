@@ -37,8 +37,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event2", "Event2\Event2.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadSafeData", "ThreadSafeData\ThreadSafeData.csproj", "{3F8B21A1-3486-4008-A8AF-B90E0E933339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj", "{056106E5-9FED-40A6-8B69-62B88BD6A6FB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams1", "Streams1\Streams1.csproj", "{C042CEFF-CF41-4512-B1B1-DB565E2E4778}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialize1", "Serialize1\Serialize1.csproj", "{C39E744F-A56D-4162-A03D-0D467FB78007}"
