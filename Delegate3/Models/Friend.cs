@@ -19,7 +19,7 @@ public class Friend
         var sRet = $"{FirstName} {LastName} is my {Level} and can be reached at {Email}.";
         if (Car != null)
         {
-            sRet += $"\n -The car is a {Car.Color} {Car.Brand} {Car.Model}";
+            sRet += $"\n -{FirstName}'s car is a {Car.Color} {Car.Brand} {Car.Model} from year {Car.YearModel}";
         }
         return sRet;
     }

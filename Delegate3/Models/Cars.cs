@@ -10,11 +10,13 @@ public class Car
     public CarColor Color { get; init; }
     public CarBrand Brand { get; init; }
     public CarModel Model { get; init; }
+    public int YearModel {get; init;}
 
     public Car Seed (SeedGenerator _seeder) => 
         new Car() {
             Color = _seeder.FromEnum<CarColor>(),
             Brand = _seeder.FromEnum<CarBrand>(),
-            Model = _seeder.FromEnum<CarModel>()
+            Model = _seeder.FromEnum<CarModel>(),
+            YearModel = _seeder.Next(1970, 2024)
             };
 }
