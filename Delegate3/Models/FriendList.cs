@@ -6,11 +6,11 @@ public class FriendList
 {
     public  List<Friend> MyFriends = new List<Friend>();
 
-    private Func<Friend, string> _emailOptions = null;
+    private Dictionary<string,Func<Friend, string>> _emailOptions = new Dictionary<string, Func<Friend, string>>();
 
-    public FriendList ConfigureEmail (Func<Friend, string> options)
+    public FriendList ConfigureEmail (string name, Func<Friend, string> configureEmail)
     {
-        _emailOptions = options;
+        _emailOptions.Add(name, configureEmail);
         return this;
     }
 
@@ -33,12 +33,13 @@ public class FriendList
         }
     }
 
-    public List<string> Emails()
+    public List<string> Emails(string name)
     {
         var emails = new List<string>();
         foreach (var friend in MyFriends)
         {
-            emails.Add(_emailOptions(friend));
+            var f = _emailOptions[name];
+            emails.Add(f(friend));
         }
         return emails;
     }

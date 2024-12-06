@@ -10,32 +10,34 @@ System.Console.WriteLine(friends);
 
 //program.cs
 friends
-    .ConfigureEmail(option =>
+    .ConfigureEmail(name: "CarRecall", configureEmail: options =>
     {
-        if (option.Car.Color == CarColor.Green)
+        if (options.Car.Color == CarColor.Green)
         {
-            return $"Dear {option.FirstName}, your car is ugly {option.Car.Color}, pls come to the shop for a paint job!";
+            return $"Dear {options.FirstName}, your car is ugly {options.Car.Color}, pls come to the shop for a paint job!";
         }
-        return $"Dear {option.FirstName}. Congratulations, to an excellent choice of a {option.Car.Color} car!";
+        return $"Dear {options.FirstName}. Congratulations, to an excellent choice of a {options.Car.Color} car!";
     })
-    .ConfigureEmail(option => {
-        if (option.Car.Color == CarColor.Red)
-        {
-            return $"Dear {option.FirstName}, your car is ugly {option.Car.Color}, pls come to the shop for a paint job!";
-        }
-        return $"Dear {option.FirstName}. Congratulations, to an excellent choice of a {option.Car.Color} car!";
+    .ConfigureEmail(name: "WeddingInvite", configureEmail: options => {
+        return $"Dear {options.FirstName}. Please join us in celebrating our wedding!";
     });
 
 
 
 //sometimes later....
-var emails = friends.Emails();
-
+System.Console.WriteLine("\nCarRecall");
+var emails = friends.Emails("CarRecall");
 foreach (var item in emails)
 {
     System.Console.WriteLine(item);
 }
 
+System.Console.WriteLine("\nWeddingInvite");
+emails = friends.Emails("WeddingInvite");
+foreach (var item in emails)
+{
+    System.Console.WriteLine(item);
+}
 
 
 
