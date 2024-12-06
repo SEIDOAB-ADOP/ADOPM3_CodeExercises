@@ -6,6 +6,14 @@ public class FriendList
 {
     public  List<Friend> MyFriends = new List<Friend>();
 
+    private Func<Friend, string> _emailOptions = null;
+
+    public FriendList ConfigureEmail (Func<Friend, string> options)
+    {
+        _emailOptions = options;
+        return this;
+    }
+
     public override string ToString()
     {
         string sRet = "";
@@ -24,4 +32,15 @@ public class FriendList
             MyFriends.Add(new Friend().Seed(rnd));
         }
     }
+
+    public List<string> Emails()
+    {
+        var emails = new List<string>();
+        foreach (var friend in MyFriends)
+        {
+            emails.Add(_emailOptions(friend));
+        }
+        return emails;
+    }
+
 }
