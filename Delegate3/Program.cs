@@ -10,21 +10,11 @@ System.Console.WriteLine(friends);
 
 //program.cs
 friends
-    .ConfigureEmail(name: "CarRecall", configureEmail: options =>
-    {
-        if (options.Car.Color == CarColor.Green)
-        {
-            return $"Dear {options.FirstName}, your car is ugly {options.Car.Color}, pls come to the shop for a paint job!";
-        }
-        return $"Dear {options.FirstName}. Congratulations, to an excellent choice of a {options.Car.Color} car!";
-    })
-    .ConfigureEmail(name: "WeddingInvite", configureEmail: options => {
-        return $"Dear {options.FirstName}. Please join us in celebrating our wedding!";
-    });
+    .ConfigureEmail("CarRecall", CarRecall)
+    .ConfigureEmail(name: "WeddingInvite", configureEmail: WeddingInvite);
 
 
-
-//sometimes later....
+//later in another galaxy far far away...
 System.Console.WriteLine("\nCarRecall");
 var emails = friends.Emails("CarRecall");
 foreach (var item in emails)
@@ -41,7 +31,19 @@ foreach (var item in emails)
 
 
 
+string CarRecall (Friend friend)
+    {
+        if (friend.Car.Color == CarColor.Green)
+        {
+            return $"Dear {friend.FirstName}, your car is ugly {friend.Car.Color}, pls come to the shop for a paint job!";
+        }
+        return $"Dear {friend.FirstName}. Congratulations, to an excellent choice of a {friend.Car.Color} car!";
+    }
 
+string WeddingInvite (Friend friend)
+    {
+        return $"Dear {friend.FirstName}. Please join us in celebrating our wedding!";
+    }
 
 
 /*
