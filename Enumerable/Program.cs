@@ -23,8 +23,7 @@ namespace IEnumerable // Note: actual namespace depends on the project name.
             //Your code:
             Console.WriteLine("\nfriendList1 using foreach - loop");
 
-            //3. create a list from friendList1 using simply copyfriends = friendList1.ToList()
-            //Sort the list according to country and write to console using copyfriends.ForEach()
+            //3. Use Linq to sort your friend list according to country
             //Your code:
             Console.WriteLine("\nSorted copyfriends using foreach - loop");
         }
