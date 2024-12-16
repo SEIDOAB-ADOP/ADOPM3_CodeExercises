@@ -22,7 +22,7 @@
 
                     return "Task1 has completed";
                 });
-                //Console.WriteLine(t1.Result);
+                Console.WriteLine(t1.Result);
 
                 t2 = Task.Run(() =>
                 {
@@ -39,7 +39,7 @@
                     }
                     return "Task2 has completed";
                 });
-                //Console.WriteLine(t2.Result);
+                Console.WriteLine(t2.Result);
 
                 t3 = Task.Run(() =>
                 {
@@ -54,23 +54,11 @@
                     }
                     return "Task3 completed";
                 });
-                //Console.WriteLine(t3.Result);
-
-                Task.WaitAll(t1, t2, t3);
-                Console.WriteLine(t1.Result);
-                Console.WriteLine(t2.Result);
                 Console.WriteLine(t3.Result);
             }
             catch (Exception ex)
             {
                 //Your code
-                Console.WriteLine(ex.Message);
-                if (t1 != null && t1.IsFaulted)
-                    Console.WriteLine("t1 faulted");
-                if (t2 != null && t2.IsFaulted)
-                    Console.WriteLine("t2 faulted");
-                if (t3 != null && t3.IsFaulted)
-                    Console.WriteLine("t3 faulted");
             }
             finally
             {

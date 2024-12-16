@@ -21,15 +21,8 @@ namespace Task3
                 Console.WriteLine(s2);
                 Console.WriteLine(s3);
 
-                Console.WriteLine("\n\nAsyncron calls");
-                //Ex3 - make the calls to SayHelloAsync
-                var r1 = await SayHelloAsync("Good Morning", 10, 1000, false); 
-                var r2 = await SayHelloAsync("Good Afternoon", 5, 2000, false);
-                var r3 = await SayHelloAsync("Good Evening", 15, 500, false);
-
-                Console.WriteLine(r1);
-                Console.WriteLine(r2);
-                Console.WriteLine(r3);
+                //Ex1 - make the calls to SayHelloAsync
+                Console.WriteLine("\n\nAsyncron calls using await pattern");
             }
             catch (Exception ex)
             {

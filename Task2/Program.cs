@@ -12,7 +12,6 @@ namespace Task2
             List<Task<string>> tasks = new List<Task<string>>();
             try
             {
-                /*
                 Console.WriteLine("Syncron calls");
                 s1 = SayHello("Good Morning", 10, 1000, false);
                 s2 = SayHello("Good Afternoon", 5, 2000, false);
@@ -21,22 +20,11 @@ namespace Task2
                 Console.WriteLine(s1);
                 Console.WriteLine(s2);
                 Console.WriteLine(s3);
-                */
-                Console.WriteLine("\n\nAsyncron calls");
-
-                tasks.Add(Task.Run(() => SayHello("Good Morning", 10, 1000, true)));
-                tasks.Add(SayHelloAsync("Good Afternoon", 5, 2000, true));
-                tasks.Add(SayHelloAsync("Good Evening", 15, 500, false));
 
                 //Ex3 - make the calls to SayHelloAsync
+                Console.WriteLine("\n\nAsyncron calls");
 
                 //Ex3 - Wait for all tasks to complete
-                Task.WaitAll(tasks.ToArray());
-                foreach (var item in tasks)
-                {
-                    Console.WriteLine(item.Result);
-                }
-
             }
             catch (Exception ex)
             {
@@ -61,11 +49,6 @@ namespace Task2
 
         //Ex2 - complete below async declaration of SayHello 
         //static public Task<string> SayHelloAsync(string message, int iterations, int msDelay, bool causeError = false) => ....
-
-
-        static public Task<string> SayHelloAsync (string message, int iterations, int msDelay, bool causeError = false) =>
-            Task.Run(() => SayHello(message, iterations,msDelay,causeError));
-
         static public string SayHello(string message, int iterations, int msDelay, bool causeError = false)
         {
             var rnd = new Random();
