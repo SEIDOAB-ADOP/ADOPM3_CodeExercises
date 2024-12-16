@@ -11,11 +11,14 @@ namespace Event1 // Note: actual namespace depends on the project name.
         {
           Console.WriteLine("\nHuge friendlist");
           
-          //Assign your event handler to FriendList.CreationProgress 
+          //Create an instance of FriendList
+          //Your code
+
+          //Assign your event handler to FriendList 
           // Your code
 
+          //Seed the instance of friendlist with 1_000_000 friends
 
-          var huge = FriendList.Factory.CreateRandom(1_000_000);
         }
 
         //Declare your Eventhandler
@@ -23,6 +26,5 @@ namespace Event1 // Note: actual namespace depends on the project name.
     }
 }
 //Exercise
-//1. In Friendlist implement the firing of an event, Creation Progress, during the CreateRandom() method
-//   - parameter to the event is Nr of friends created
+//1. In Friendlist implement the firing of an event, 
 //2. In Program implement the event handler and assign it to the event CreationProgress
