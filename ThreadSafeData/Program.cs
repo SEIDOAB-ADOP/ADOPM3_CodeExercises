@@ -6,20 +6,26 @@ namespace ThreadSafeData
 {
     class Program
     {
-        public class Vehicle
-        {
-            public string RegistrationNumber { get; set; }
-            public string Owner { get; set; }
-        }
 
         //Thread Safe Datastructure
         public class VehicleStorage
         {
-            List<Vehicle> _vehicles = new List<Vehicle>();
+            private readonly Random _rnd = new Random();
+            private readonly List<Vehicle> _vehicles = new List<Vehicle>();
 
             public void SetData (string regNr, string owner)
             {
-                var v = new Vehicle() { RegistrationNumber = regNr, Owner = owner };
+                //Do something with regNr and owner before writing to the list
+                string anotherRegNr = regNr;
+                string anotherOwner = owner;
+                Task.Delay(_rnd.Next(1, 5)).Wait();
+
+                if ((anotherRegNr, anotherOwner) != ("ABC 123", "Kalle Anka") &&
+                    (anotherRegNr, anotherOwner) != ("HKL 556", "Musse Pigg"))
+                       System.Console.WriteLine($"RegNr: {anotherRegNr}, Owner: {anotherOwner}");
+
+
+                var v = new Vehicle() {RegistrationNumber = anotherRegNr, Owner = anotherOwner};
                 _vehicles.Add(v);
             }
 
@@ -42,6 +48,12 @@ namespace ThreadSafeData
                 }
                 return true;
             }
+            
+            public class Vehicle
+            {
+                public string RegistrationNumber { get; set; }
+                public string Owner { get; set; }
+            }
         }
 
         static void Main(string[] args)
@@ -55,17 +67,10 @@ namespace ThreadSafeData
                 for (int i = 0; i < 1000; i++)
                 {
                     //Write Data to Vehicle, "ABC 123", "Kalle Anka"
-
-                    //introduce some random system delay between 1 and 5 milliseconds
+                    myCar.SetData("ABC 123", "Kalle Anka");
                     Task.Delay(rnd.Next(1, 5)).Wait();
-
-                    //Read Data from Vehicle
-
-                    //Check data consistency
-                    if (!myCar.CheckConsistency())
-                    {
-                        Console.WriteLine("Data inconsistent!");
-                    }
+                    
+                    myCar.GetData(i);
                 }
                 Console.WriteLine("t1 Finished");
             });
@@ -76,21 +81,23 @@ namespace ThreadSafeData
                 for (int i = 0; i < 1000; i++)
                 {
                     //Write Data to Vehicle, "HKL 556", "Musse Pigg"
-
-                    //introduce some random system delay between 1 and 5 milliseconds
-
-                    //Read Data from Vehicle
-
-                    //Verify data consistency - give error if not consistent
+                    myCar.SetData("HKL 556", "Musse Pigg");
+                    Task.Delay(rnd.Next(1, 5)).Wait();
+                    
+                    myCar.GetData(i);
                 }
                 Console.WriteLine("t2 Finished");
             });
 
             Task.WaitAll(t1, t2);
             Console.WriteLine("All Finished");
+
+            //Check data consistency
+            if (!myCar.CheckConsistency())
+            {
+                Console.WriteLine("Data inconsistent!");
+            }
         }
-
-
     }
 }
 /*  Exercise
