@@ -75,12 +75,7 @@ namespace ThreadSafeData
                 var rnd = new Random();
                 for (int i = 0; i < 1_000; i++)
                 {
-                    vechicleStorage.SetData("Mickey Mouse", "Jaguar", "EFD 235");
-
-                    //(string owner, string carBrand, string regNr) = vechicleStorage.GetData();
-                    // if ((owner, carBrand, regNr) != ("Donald Duck", "Volvo", "JKF 345") &&
-                    //     (owner, carBrand, regNr) != ("Mickey Mouse", "Jaguar", "EFD 235"))
-                    //     Console.WriteLine($"mySafe mismatch: Owner:{owner}, CarBrand:{carBrand}, RegNr:{regNr}");
+                    //Your Code
                 }
                 Console.WriteLine("t1 Finished");
             });
@@ -90,12 +85,7 @@ namespace ThreadSafeData
                 var rnd = new Random();
                 for (int i = 0; i < 1_000; i++)
                 {
-                    vechicleStorage.SetData("Donald Duck", "Volvo", "JKF 345");
-
-                    //(string owner, string carBrand, string regNr) = vechicleStorage.GetData();
-                    // if ((owner, carBrand, regNr) != ("Donald Duck", "Volvo", "JKF 345") &&
-                    //     (owner, carBrand, regNr) != ("Mickey Mouse", "Jaguar", "EFD 235"))
-                    //     Console.WriteLine($"mySafe mismatch: Owner:{owner}, CarBrand:{carBrand}, RegNr:{regNr}");
+                    //Your Code
                 }
                 Console.WriteLine("t2 Finished");
             });
@@ -109,8 +99,8 @@ namespace ThreadSafeData
     }  
 }
 /*  Exercise
-    1.  - Have task t1 write 1000 times "Mickey Mouse", "Jaguar", "EFD 235" to vechicleStorage.SetData
-        - Have task t2 write 1000 times "Donald Duck", "Volvo", "JKF 345" to vechicleStorage.SetData
+    1.  - Have task t1 write 1000 times "Mickey Mouse", "Jaguar", "EFD 235" using vechicleStorage.SetData
+        - Have task t2 write 1000 times "Donald Duck", "Volvo", "JKF 345" using vechicleStorage.SetData
         - Verify data consistency
         - Discuss in the group what is data consistency means here and why is it wrong
     
@@ -118,7 +108,8 @@ namespace ThreadSafeData
         - The data read could be either of below.  Both are correct. Do you understand why?
              (owner, carBrand, regNr) == ("Donald Duck", "Volvo", "JKF 345") or
              (owner, carBrand, regNr) == ("Mickey Mouse", "Jaguar", "EFD 235")
-        - in both tasks, write an if statement after vechicleStorage.GetData() to test data consistency. Write an error if not consistent
+        - in both tasks, write an if statement after vechicleStorage.GetData() to test data consistency. 
+          Write an error if not consistent
 
     3. Make class Vehicle Thread safe using lock(...)
         - Verify data consistency is now correct
