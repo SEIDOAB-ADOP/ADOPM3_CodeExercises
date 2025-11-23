@@ -1,0 +1,26 @@
+<Solution>
+  <Project Path="ConsoleInput\ConsoleInput.csproj" />
+  <Project Path="Delegate1\Delegate1.csproj" />
+  <Project Path="Delegate2\Delegate2.csproj" />
+  <Project Path="Delegate3\Delegate3.csproj" />
+  <Project Path="Enumerable\IEnumerable.csproj" />
+  <Project Path="ErrorHandling\ErrorHandling.csproj" />
+  <Project Path="Event1\Event1.csproj" />
+  <Project Path="Event2\Event2.csproj" />
+  <Project Path="Event3\Event3.csproj" />
+  <Project Path="Lambda0\Lambda0.csproj" />
+  <Project Path="Lambda2\Lambda2.csproj" />
+  <Project Path="Linq_Orders\Linq_Orders.csproj" />
+  <Project Path="Linq_Orders_Customers\Linq_Orders_Customers.csproj" />
+  <Project Path="Linq_ShallowVsDeepCopy\Linq_ShallowVsDeepCopy.csproj" />
+  <Project Path="SeedGenerator\SeedGenerator.csproj" />
+  <Project Path="Serialize0\Serialize0.csproj" />
+  <Project Path="Serialize1\Serialize1.csproj" />
+  <Project Path="Streams0\Streams0.csproj" />
+  <Project Path="Streams1\Streams1.csproj" />
+  <Project Path="Task1\Task1.csproj" />
+  <Project Path="Task2\Task2.csproj" />
+  <Project Path="Task3\Task3.csproj" />
+  <Project Path="Tasks0\Task0.csproj" />
+  <Project Path="ThreadSafeData\ThreadSafeData.csproj" />
+</Solution>
