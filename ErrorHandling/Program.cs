@@ -12,12 +12,13 @@ namespace ErrorHandling
             }
             catch (Exception ex)
             {
-                AppLog.Instance.LogException(ex);
+                //AppLog.Instance.LogException(ex);
                 Console.WriteLine("Pls contact our service center, you have a virus in your computer");
             }
             finally
             {
-                Console.WriteLine(AppLog.Instance.WriteToDisk());
+                //AppLog.Instance.WriteToDisk()
+                Console.WriteLine("Program terminated");
             }
         }
         private static void ProcessUserInput()
@@ -45,13 +46,13 @@ namespace ErrorHandling
                         }
                         catch (InsufficientMemoryException ex)
                         {
-                            AppLog.Instance.LogException(ex);
+                            //AppLog.Instance.LogException(ex);
                             Console.WriteLine($"{ex.Message} - Why cant you listen!!");
                             throw;
                         }
                         catch (Exception ex)
                         {
-                            AppLog.Instance.LogException(ex);
+                            //AppLog.Instance.LogException(ex);
                             Console.WriteLine($"{ex.Message} - But it is alright my friend!");
                         }
                         finally
@@ -81,6 +82,7 @@ namespace ErrorHandling
 }
 
 //Exercise:
-//1. Change the messages thrown in PressTheButton() to your own ExceptionMessage, ExplosionException inheriting from Exception.
-//   Create a property in ExplosionException that of the button pressed and severity of the error (managable and fatal)
-//2. Modify the code in ProcessUserInput() to catch ExplosionException and depending on severity gives an user message(manageable) or rethrow (fatal)
+//1. Create your own exception class called ExplosionException with two properties: ButtonPressed and Severity (enum with values Manageable and Fatal). 
+//2. Throw a ExplosionException when button 6 is pressed with Severity set to Manageable.
+//3. Throw a ExplosionException when button 8 is pressed with Severity set to Fatal.
+//4. Modify the code in ProcessUserInput() to catch ExplosionException and depending on severity gives an user message(manageable) or rethrow (fatal)
