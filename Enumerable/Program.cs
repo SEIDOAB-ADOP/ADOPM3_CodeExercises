@@ -25,7 +25,7 @@ namespace IEnumerable // Note: actual namespace depends on the project name.
 
             //3. Use Linq to sort your friend list according to country
             //Your code:
-            Console.WriteLine("\nSorted copyfriends using foreach - loop");
+            Console.WriteLine("\nSorted friends using foreach - loop");
         }
     }
 }
